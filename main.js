@@ -6,7 +6,7 @@ var mongoose = require('mongoose');
 
 
 var app = express();
-app.use(express.static(__dirname + "/public"));
+app.use(express.static(path.join(__dirname,'public')));
 app.use(bodyParser.json());
 mongoose.Promise = global.Promise;
 
@@ -18,7 +18,7 @@ var TodoSchema = new mongoose.Schema({
    name: String,
    completed: Boolean,
    note: String,
-   updated_at: { type: Date, default: Date.now },
+   updated_at: { type: Date, default: Date.now }
 });
 // Create a model based on the schema
 var Todo = mongoose.model('Todo', TodoSchema);
