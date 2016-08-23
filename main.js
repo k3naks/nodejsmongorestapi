@@ -54,7 +54,7 @@ app.use(function (req, res, next) {
    next();
 });
 
-app.get("/", function(req, res, next) {
+app.get("/todos", function(req, res, next) {
    Todo.find(function (err, todos) {
       if (err) return next(err);
       res.json(todos);

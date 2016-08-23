@@ -2,12 +2,15 @@ $(document).ready(
     function(){
 
         function refreshList() {
-            $('ol').empty();
+            $('#todo_list').empty();
             $.get("/todos", function(data, status){
 
                 if (status == 'success') {
                     for (var i = 0; i < data.length; i++) {
-                        $('ol').append('<li data-id=\'' + data[i]._id +'\'>' + data[i].name + ' (' + data[i].note + ')' + '</li>');
+                        $('#todo_list').append(
+                            $('<li>').attr('data-id', data[i]._id).append(data[i].name + ' (' + data[i].note + ')'));
+
+                        //$('#todo_list').append('<li data-id=\'' + data[i]._id +'\'>' + data[i].name + ' (' + data[i].note + ')' + '</li>');
                     }
                 }
             });
@@ -63,7 +66,7 @@ $(document).ready(
             $(this).val('');
         });
 
-        $('ol').sortable();
+        $('#todo_list').sortable();
 
     }
 );
