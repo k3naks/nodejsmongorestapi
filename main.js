@@ -3,6 +3,7 @@ var express = require("express");
 var path = require("path");
 var bodyParser = require("body-parser");
 var mongoose = require('mongoose');
+var config = require('config');
 
 
 var app = express();
@@ -38,7 +39,7 @@ Todo.find(function (err, todos) {
    console.log(todos)
 });
 
-var server = app.listen(8081, function () {
+var server = app.listen(config.get('port'), function () {
    var port = server.address().port;
    console.log("App now running on port", port);
 });
