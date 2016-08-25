@@ -9,6 +9,9 @@ var config = require('config');
 var app = express();
 app.use(express.static(path.join(__dirname,'public')));
 app.use(bodyParser.json());
+
+app.set('views', __dirname + '/templates');
+app.set('view engine' , 'ejs');
 mongoose.Promise = global.Promise;
 
 
@@ -53,6 +56,10 @@ app.use(function (req, res, next) {
    var ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
    console.log('Client IP:', ip);
    next();
+});
+
+app.get('/', function (req, res, next) {
+   res.render('index', { title : 'Template Title'})
 });
 
 app.get("/todos", function(req, res, next) {
