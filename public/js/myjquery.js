@@ -48,7 +48,7 @@ $(document).ready(
             }
         });
 
-        $(document).on('dblclick','li', function(){
+        $('#todo_list').on('dblclick','li', function(){
             $(this).toggleClass('strike').fadeOut('slow');
             var recordId = $(this).attr("data-id");
             $.ajax({

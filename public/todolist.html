@@ -14,14 +14,22 @@
 
 <div class="container">
     <h2>Need to do</h2>
-    <p><em>Click and drag to reorder, double click to cross an item off.</em></p>
-
     <form name="toDoList">
-        <input type="text" name="ListItem"/>
-        <input type="text" name="ListNote"/>
+        <ul class="form-style-1">
+            <li>
+                <label>Name <span class="required">*</span></label>
+                <input type="text" name="ListItem" class="field-long" />
+            </li>
+            <li>
+                <label>Note <span class="required">*</span></label>
+                <input type="text" name="ListNote" class="field-long" />
+            </li>
+            <li>
+                <div id="button">Add</div>
+            </li>
+        </ul>
     </form>
 
-    <div id="button">Add</div>
     <br/>
     <ol id="todo_list"></ol>
 
