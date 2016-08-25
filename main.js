@@ -23,8 +23,15 @@ function handleError(res, reason, message, code) {
    res.status(code || 500).json({"error": message});
 }
 
-app.get('/', function (req, res, next) {
+app.get('/jobs', function (req, res, next) {
    res.render('index', { title : 'Template Title'})
+});
+
+app.get('/jobs/:job_id', function (req, res, next) {
+   Todo.findById(req.params.job_id, function (err, post) {
+      if (err) return next(err);
+      res.render('job', post);
+   });
 });
 
 app.get("/todos", function(req, res, next) {

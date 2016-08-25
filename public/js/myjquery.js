@@ -62,6 +62,11 @@ $(document).ready(
             //refreshList();
         });
 
+        $('#todo_list').on('click','li', function(){
+            var recordId = $(this).attr("data-id");
+            window.location = '/jobs/' + recordId;
+        });
+
         $('input').focus(function() {
             $(this).val('');
         });
