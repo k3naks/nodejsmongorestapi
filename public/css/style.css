@@ -13,6 +13,12 @@ body {
     background: white;
     border-radius: 5px;}
 
+.container-details{
+    padding: 20px;
+    width: 100%;
+    background: #eaf8ff;
+    border-radius: 5px;}
+
 form {
     display: inline-block;
 }
@@ -45,6 +51,18 @@ ol li:nth-child(even){background: #dfdfdf;}
 
 li:hover{
     cursor: pointer;
+}
+
+.back-button{
+    display: inline-block;
+    text-decoration: none;
+    background-color: #142efc;
+    color:#ffffff;
+    border-radius: 5px;
+    text-align:center;
+    margin-top:7px;
+    padding: 5px 15px;
+    width: 50px;
 }
 
 .form-style-1 {
